@@ -217,3 +217,18 @@ ul{
     background-color: #0f1111a8;
     position: absolute;
 }
+
+.search{
+    height: 400px;
+    width: 555px;
+    background-color: white;
+    position: absolute;
+    z-index: 1;
+    left: 28%;
+    top: 6.2%;
+    padding: 15px;
+}
+.search h3{
+    margin-top: 20px;
+    font-size: 22px;
+}
