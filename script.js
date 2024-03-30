@@ -9,7 +9,7 @@ var arr = [
     {name: "Fashion", image: "https://images.unsplash.com/photo-1557777586-f6682739fcf3?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
 ]
 
-function showoverlay(){
+function showImage(){
     let clutter = "";
     arr.forEach( (obj)=>{
         clutter += `<div class="box1 box">
@@ -23,4 +23,16 @@ function showoverlay(){
      document.querySelector(".shop-section").innerHTML = clutter;
 }
 
-showoverlay()
+function showOverlay(){
+    let input = document.querySelector(".search-input");
+    input.addEventListener("focus",function(){
+        document.querySelector(".overlay").style.display = "block"
+    })
+    input.addEventListener("blur",function(){
+        document.querySelector(".overlay").style.display = "none"
+    })
+}
+
+
+showImage()
+showOverlay()
