@@ -27,18 +27,23 @@ function showOverlay(){
     let input = document.querySelector(".search-input");
     input.addEventListener("focus",function(){
         document.querySelector(".overlay").style.display = "block"
-        document.querySelector(".search").style.display = "block";
+        
     })
     input.addEventListener("blur",function(){
         document.querySelector(".overlay").style.display = "none"
-        document.querySelector(".search").style.display = "none";
-    })
-    let clutter = "";
-    arr.forEach( (obj)=>{
-       clutter += `<h3>${obj.name}</h3>`
+         document.querySelector(".search").style.display = "none";
     })
     
-    document.querySelector(".search").innerHTML = clutter;
+    input.addEventListener("input",function(){
+        let filterarr = arr.filter(obj =>obj.name.toLowerCase().startsWith(input.value));
+        let clutter = "";
+        filterarr.forEach((obj)=>{
+            clutter += `<h3>${obj.name}</h3>`
+            console.log(obj.name);
+        })
+        document.querySelector(".search").style.display = "block";
+        document.querySelector(".search").innerHTML = clutter;
+    })
 }
 
 
