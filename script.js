@@ -9,14 +9,16 @@ var arr = [
     {name: "Fashion", image: "https://images.unsplash.com/photo-1557777586-f6682739fcf3?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
 ]
 
+let cart = [];
+
 function showImage(){
     let clutter = "";
-    arr.forEach( (obj)=>{
+    arr.forEach( (obj , index)=>{
         clutter += `<div class="box1 box">
         <div class="img-content">
             <h2>${obj.name}</h2>
         <div class="box-img" style="background-image: url('${obj.image}');"></div>
-        <p><a href="#">See More</a></p>
+        <p><a data-index=${index} class="add" href="#">See More</a></p>
         </div>
 </div>`;
     })
@@ -46,6 +48,15 @@ function showOverlay(){
     })
 }
 
+function addtocart(){
+    document.querySelector(".shop-section").addEventListener("click",function(e){
+        if(e.target.classList.contains("add")){
+            cart.push(arr[e.target.dataset.index])
+            console.log(cart)
+        }
+    })
+}
 
 showImage()
 showOverlay()
+addtocart()
