@@ -52,11 +52,25 @@ function addtocart(){
     document.querySelector(".shop-section").addEventListener("click",function(e){
         if(e.target.classList.contains("add")){
             cart.push(arr[e.target.dataset.index])
-            console.log(cart)
         }
+    })
+}
+
+function showCart(){
+    document.querySelector(".nav-cart").addEventListener("click",function(){
+        document.querySelector(".cart-add").style.display = "block";
+        let clutter = "";
+        cart.forEach((pro)=>{
+            clutter += `<div  class="cart">
+            <img src="${pro.image}"/>
+            <h2>${pro.name}</h2>
+        </div>`
+        })
+        document.querySelector(".cart-add").innerHTML = clutter;
     })
 }
 
 showImage()
 showOverlay()
 addtocart()
+showCart()

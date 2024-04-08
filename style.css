@@ -232,3 +232,26 @@ ul{
     margin-top: 20px;
     font-size: 22px;
 }
+.cart-add{
+    position: relative;
+}
+.cart{
+    position: absolute;
+    right: 3%;
+    height: 55px;
+    width: 150px;
+    background-color: #cccccc;
+    padding: 5px;
+    border-radius: 10px;
+}
+.cart img{
+    height: 50px;
+    width: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.cart h2{
+    display: inline-block;
+    vertical-align: middle;
+}
