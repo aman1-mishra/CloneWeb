@@ -239,7 +239,7 @@ ul{
     position: absolute;
     right: 3%;
     height: 55px;
-    width: 150px;
+    width: 170px;
     background-color: #cccccc;
     padding: 5px;
     border-radius: 10px;
@@ -250,8 +250,12 @@ ul{
     display: inline-block;
     vertical-align: middle;
     margin-right: 10px;
+    margin-left: 10px;
 }
 .cart h2{
     display: inline-block;
     vertical-align: middle;
+}
+.cart i{
+    font-size: 25px;
 }

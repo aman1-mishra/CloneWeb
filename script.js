@@ -64,9 +64,13 @@ function showCart(){
             clutter += `<div  class="cart">
             <img src="${pro.image}"/>
             <h2>${pro.name}</h2>
+            <i  class="remove fa-solid fa-xmark"></i>
         </div>`
         })
         document.querySelector(".cart-add").innerHTML = clutter;
+        document.querySelector(".remove").addEventListener("click",function(){
+            document.querySelector(".cart-add").remove();
+        })
     })
 }
 
